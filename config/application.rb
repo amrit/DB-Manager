@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+crequire File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
@@ -55,6 +55,8 @@ module Mobcapdb
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    config.assets.precompile += %w(active_admin.css active_admin.js)
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
