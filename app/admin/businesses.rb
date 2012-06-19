@@ -2,7 +2,7 @@ ActiveAdmin.register Business do
   
   index do
     column :name
-   # column :category
+    column :type
     column :manager
     column :email
     default_actions
