@@ -13,6 +13,8 @@ end
 
 gem 'activeadmin'
 
+gem 'paper_trail'
+
 #gem 'has_one_autocreate'
 
 # Gems used only for assets and not required
