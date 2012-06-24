@@ -3,7 +3,7 @@
 <b>Created At:</b>
 <%= @versions.last.created_at%>
 <br>
-<b>Admin</b>: <%= @versions.last.whodunnit %>
+<b>Admin</b>: <%= @versions.last.whodunnit%>
 <br>
 <% if @versions.length.to_i > 1 %>
   <% if params[:version].to_i > 1 || !params[:version] %>

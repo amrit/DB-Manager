@@ -1,10 +1,11 @@
 ActiveAdmin.register Business, { :sort_order => :name_asc } do
-  scope :joined, :default => true do |businesses|
+  scope :all, :default => true do |businesses|
     businesses.includes [:type]
   end
   index do
     column :name
-    column :type, :sortable => 'businesses.type'
+    column :type, :sortable => 'types.category'
+    
     column :manager
     column :email
     default_actions
