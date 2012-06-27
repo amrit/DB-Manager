@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mobcapdb</title>
+  <title>Mobile Captain Database</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "highcharts", "exporting", "jquery-1.4.2.min", "rails" %>
   <%= csrf_meta_tags %>
+  <%= yield(:head) %>
 </head>
 <body>
+  	<div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
 
-<%= yield %>
 
 </body>
 </html>
+
+

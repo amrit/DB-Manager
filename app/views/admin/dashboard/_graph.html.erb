@@ -1,0 +1,81 @@
+
+
+
+<%= javascript_include_tag "http://code.jquery.com/jquery-1.7.2.min.js" %>
+<%= javascript_include_tag "http://code.highcharts.com/highcharts.js" %>
+<%= javascript_include_tag "http://code.highcharts.com/modules/exporting.js" %>
+
+<div id="summary" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+  $(function() {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'summary',
+                type: 'column'
+            },
+         
+            xAxis: {
+                categories: ['Automotive', 'Agency', 'Contractor', 'Country Club', 'Other']
+            },
+            yAxis: {
+                min: 0,
+             
+              
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: 100,
+                verticalAlign: 'top',
+                y: 0,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>' + this.x + '</b><br/>' + this.series.name + ': ' + this.y + '<br/>' + 'Total: ' + this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
+            series: [{
+                name: 'Mobile',
+                data: [5, 3, 4, 27, 2]},
+            {
+                name: 'Foursquare',
+                data: [2, 2, 3, 2, 1]},
+            {
+                name: 'Facebook',
+                data: [3, 4, 4, 2, 5]},
+            {
+                name: 'Yelp',
+                data: [3, 4, 4, 2, 5]},
+            {
+                name: 'Google',
+                data: [3, 4, 4, 2, 5]}]
+        });
+    });
+});
+
+
+</script>
+

@@ -13,6 +13,15 @@ ActiveAdmin::Dashboards.build do
     end
   end
   
+ 
+  section "Business Summary", do
+    div do
+         render 'graph'
+         
+         #text_node %{<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/KAzFy/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>}.html_safe
+       end
+  end
+  
   
 #  section "Business Summary" do
  #   ul do
