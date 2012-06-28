@@ -7,6 +7,7 @@ class Business < ActiveRecord::Base
   def admin_permalink
     admin_business_path(self)
   end
+
   
   attr_accessible :description, :email, :facebook, :foursquare, :google, :manager, :mobile, :name, :phone, :type_id, :url, :yelp
 end

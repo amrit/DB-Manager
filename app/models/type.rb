@@ -5,4 +5,5 @@ class Type < ActiveRecord::Base
   def to_s
     category
   end
+
 end

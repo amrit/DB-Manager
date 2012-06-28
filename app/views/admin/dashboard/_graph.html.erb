@@ -5,7 +5,7 @@
 <%= javascript_include_tag "http://code.highcharts.com/highcharts.js" %>
 <%= javascript_include_tag "http://code.highcharts.com/modules/exporting.js" %>
 
-<div id="summary" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id="summary"  margin: "0 auto"></div>
 
 <script type="text/javascript">
   $(function() {
@@ -16,12 +16,21 @@
                 renderTo: 'summary',
                 type: 'column'
             },
+			title: {
+						text: '',
+						
+					},
+
+		
          
             xAxis: {
-                categories: ['Automotive', 'Agency', 'Contractor', 'Country Club', 'Other']
+                categories: ['Automotive', 'Agency', 'Contractor', 'Country Club', 'Ent.', 'Funeral', 'Furniture', 'Healthcare', 'Laundry', 'Legal', 'Office', 'Other', 'Personal Trainer', 'Religious', 'Restaurant', 'Retail', 'Salon', 'Wedding Hall']
             },
             yAxis: {
                 min: 0,
+				title: {
+								text: 'Number of Businesses'
+							},
              
               
                 stackLabels: {
@@ -33,7 +42,7 @@
                 }
             },
             legend: {
-                align: 'right',
+                align: 'left',
                 x: 100,
                 verticalAlign: 'top',
                 y: 0,
@@ -57,21 +66,23 @@
                     }
                 }
             },
-            series: [{
+            series: [
+
+                {
                 name: 'Mobile',
-                data: [5, 3, 4, 27, 2]},
+                data: [<%= (Business.where(:type_id => 2)).count(:conditions => {:mobile => true}) %>,  <%= (Business.where(:type_id => 4)).count(:conditions => {:mobile => true}) %>,  <%= (Business.where(:type_id => 5)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 6)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 7)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 9)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 10)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 11)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 12)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 13)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 14)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 1)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 15)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 16)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 17)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 8)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 18)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 19)).count(:conditions => {:mobile => true}) %>, <%= (Business.where(:type_id => 20)).count(:conditions => {:mobile => true}) %>]},
             {
                 name: 'Foursquare',
-                data: [2, 2, 3, 2, 1]},
+                data: [<%= (Business.where(:type_id => 2)).count(:conditions => {:foursquare => true}) %>,  <%= (Business.where(:type_id => 4)).count(:conditions => {:foursquare => true}) %>,  <%= (Business.where(:type_id => 5)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 6)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 7)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 9)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 10)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 11)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 12)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 13)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 14)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 1)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 15)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 16)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 17)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 8)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 18)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 19)).count(:conditions => {:foursquare => true}) %>, <%= (Business.where(:type_id => 20)).count(:conditions => {:foursquare => true}) %>] },
             {
                 name: 'Facebook',
-                data: [3, 4, 4, 2, 5]},
+                data: [<%= (Business.where(:type_id => 2)).count(:conditions => {:facebook => true}) %>,  <%= (Business.where(:type_id => 4)).count(:conditions => {:facebook => true}) %>,  <%= (Business.where(:type_id => 5)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 6)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 7)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 9)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 10)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 11)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 12)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 13)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 14)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 1)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 15)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 16)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 17)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 8)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 18)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 19)).count(:conditions => {:facebook => true}) %>, <%= (Business.where(:type_id => 20)).count(:conditions => {:facebook => true}) %>]},
             {
                 name: 'Yelp',
-                data: [3, 4, 4, 2, 5]},
+                data: [<%= (Business.where(:type_id => 2)).count(:conditions => {:yelp => true}) %>,  <%= (Business.where(:type_id => 4)).count(:conditions => {:yelp => true}) %>,  <%= (Business.where(:type_id => 5)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 6)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 7)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 9)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 10)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 11)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 12)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 13)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 14)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 1)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 15)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 16)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 17)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 8)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 18)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 19)).count(:conditions => {:yelp => true}) %>, <%= (Business.where(:type_id => 20)).count(:conditions => {:yelp => true}) %>]},
             {
                 name: 'Google',
-                data: [3, 4, 4, 2, 5]}]
+                data: [<%= (Business.where(:type_id => 2)).count(:conditions => {:google => true}) %>,  <%= (Business.where(:type_id => 4)).count(:conditions => {:google => true}) %>,  <%= (Business.where(:type_id => 5)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 6)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 7)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 9)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 10)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 11)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 12)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 13)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 14)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 1)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 15)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 16)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 17)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 8)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 18)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 19)).count(:conditions => {:google => true}) %>, <%= (Business.where(:type_id => 20)).count(:conditions => {:google => true}) %>]}]
         });
     });
 });
