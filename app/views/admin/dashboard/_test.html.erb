@@ -1,1 +1,109 @@
-<h1> hello world </h1>
+
+
+
+<%= javascript_include_tag "http://code.jquery.com/jquery-1.7.2.min.js" %>
+<%= javascript_include_tag "http://code.highcharts.com/highcharts.js" %>
+<%= javascript_include_tag "http://code.highcharts.com/modules/exporting.js" %>
+
+<div id="newgraph"  margin: "0 auto"></div>
+
+<script type="text/javascript">
+  $(function () {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                type: 'column'
+            },
+            title: {
+                text: 'Business Summary'
+            },
+            xAxis: {
+                categories:  ['Mobile', 'Foursquare', 'Facebook', 'Yelp', 'Google']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of Businesses'
+                }
+            },
+            legend: {
+                backgroundColor: '#FFFFFF',
+                reversed: true
+            },
+            tooltip: {
+                formatter: function() {
+                    return ''+
+                        this.series.name +': '+ this.y +'';
+                }
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{
+                name: 'Automotive',
+                data: [5, 3, 4, 7, 2]
+            }, {
+                name: 'Agency',
+                data: [2, 2, 3, 2, 1]
+            }, {
+                name: 'Contractor',
+                data: [3, 4, 4, 2, 5]
+            }, {
+                name: 'Country Club',
+                data: [3, 4, 4, 2, 5]
+            }, {
+	             name: 'Ent.',
+	             data: [3, 4, 4, 2, 5]
+	        }, {
+		         name: 'Funeral',
+		         data: [3, 4, 4, 2, 5]
+		    }, {
+			     name: 'Furniture',
+			     data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Healthcare',
+				 data: [3, 4, 4, 2, 5]
+		   	}, {
+			     name: 'Laundry',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Legal',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Office',
+				 data: [3, 4, 4, 2, 5]
+		    }, {		
+			     name: 'Personal Trainer',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Real Estate',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Religious',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Restaurant',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Retail',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Salon',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Wedding Hall',
+				 data: [3, 4, 4, 2, 5]
+			}, {
+			     name: 'Other',
+				 data: [3, 4, 4, 2, 5]
+				}]
+        });
+    });
+
+});
+
+</script>

@@ -11,7 +11,11 @@ group :production do
   gem 'pg'
 end
 
+gem 'haml-rails'
+
 gem 'activeadmin'
+
+#gem 'activeadmin', :git => 'git://github.com/mattvague/active_admin.git', :branch => '270_batch_edit_api'
 
 gem 'paper_trail'
 
