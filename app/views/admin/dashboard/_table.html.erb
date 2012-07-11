@@ -1,0 +1,584 @@
+<%= javascript_include_tag "http://code.jquery.com/jquery-1.7.2.min.js" %>
+
+<script type="text/javascript">
+	$(‘tr:odd’).css(‘background-color’, ‘#ccc’);
+</script>
+<h1>Businesses</h1>
+
+
+
+<style type="text/css">
+table.tableizer-table {border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif; font-size: 12px;} .tableizer-table td {padding: 4px; margin: 3px; border: 1px solid #ccc;}
+.tableizer-table th {background-color: #104E8B; color: #FFF; font-weight: bold;}		</style>
+
+<table class="tableizer-table">
+			<tbody>
+				<tr class="tableizer-firstrow">
+					<th>
+						Industry</th>
+					<th>
+						Instances</th>
+					<th colspan="2">
+						Mobile</th>
+					<th colspan="2">
+						Foursquare</th>
+					<th colspan="2">
+						Facebook</th>
+					<th colspan="2">
+						Yelp</th>
+					<th colspan="2">
+						Google</th>
+				</tr>
+				<tr>
+					<td>
+						&nbsp;</td>
+					<td>
+						#</td>
+					<td>
+						#</td>
+					<td>
+						% of Total</td>
+					<td>
+						#</td>
+					<td>
+						% of Total</td>
+					<td>
+						#</td>
+					<td>
+						% of Total</td>
+					<td>
+						#</td>
+					<td>
+						% of Total</td>
+					<td>
+						#</td>
+					<td>
+						% of Total</td>
+				</tr>
+				<tr>
+					<td>
+						Automotive</td>
+					<td>
+						<%= (Business.where(:type_id => 2)).count() %> </td>
+					<td>
+						<%= (Business.where(:type_id => 2)).count(:conditions => {:mobile => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 2)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 2)).count() ) ) * 100.to_f, :precision => 1) %> </td>
+					<td>
+						<%= (Business.where(:type_id => 2)).count(:conditions => {:foursquare => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 2)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 2)).count() ) ) * 100, :precision => 1) %></td>
+					<td>
+						<%= (Business.where(:type_id => 2)).count(:conditions => {:facebook => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 2)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 2)).count() ) ) * 100, :precision => 1) %></td>
+					<td>
+						<%= (Business.where(:type_id => 2)).count(:conditions => {:yelp => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 2)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 2)).count() ) ) * 100, :precision => 1) %></td>
+					<td>
+						<%= (Business.where(:type_id => 2)).count(:conditions => {:google => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 2)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 2)).count() ) ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Agencies</td>
+						<td>
+							<%= (Business.where(:type_id => 4)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 4)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 4)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 4)).count() ) ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 4)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 4)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 4)).count() ) ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 4)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 4)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 4)).count() ) ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 4)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 4)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 4)).count() ) ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 4)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 4)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 4)).count() ) ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Contractor</td>
+						<td>
+							<%= (Business.where(:type_id => 5)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 5)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 5)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 5)).count() ).to_f ) * 100.to_f, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 5)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 5)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 5)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 5)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 5)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 5)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 5)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 5)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 5)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 5)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 5)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 5)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Country Club</td>
+						<td>
+							<%= (Business.where(:type_id => 6)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 6)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 6)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 6)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 6)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 6)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 6)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 6)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 6)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 6)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 6)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 6)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 6)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 6)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 6)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 6)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Entertainment</td>
+						<td>
+							<%= (Business.where(:type_id => 7)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 7)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 7)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 7)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 7)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 7)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 7)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 7)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 7)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 7)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 7)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 7)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 7)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 7)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 7)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 7)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Funeral</td>
+						<td>
+							<%= (Business.where(:type_id => 9)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 9)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 9)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 9)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 9)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 9)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 9)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 9)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 9)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 9)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 9)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 9)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 9)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 9)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 9)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 9)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Furniture</td>
+						<td>
+							<%= (Business.where(:type_id =>  10)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id =>  10)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id =>  10)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id =>  10)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id =>  10)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id =>  10)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id =>  10)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id =>  10)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id =>  10)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id =>  10)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id =>  10)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id =>  10)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id =>  10)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id =>  10)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id =>  10)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id =>  10)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Healthcare</td>
+						<td>
+							<%= (Business.where(:type_id => 11)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 11)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 11)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 11)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 11)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 11)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 11)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 11)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 11)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 11)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 11)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 11)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 11)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 11)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 11)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 11)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Laundry</td>
+						<td>
+							<%= (Business.where(:type_id => 12)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 12)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 12)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 12)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 12)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 12)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 12)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 12)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 12)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 12)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 12)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 12)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 12)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 12)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 12)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 12)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Legal</td>
+						<td>
+							<%= (Business.where(:type_id => 13)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 13)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 13)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 13)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 13)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 13)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 13)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 13)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 13)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 13)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 13)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 13)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 13)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 13)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 13)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 13)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Office</td>
+						<td>
+							<%= (Business.where(:type_id => 14)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 14)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 14)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 14)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 14)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 14)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 14)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 14)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 14)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 14)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 14)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 14)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 14)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 14)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 14)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 14)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Personal Trainer</td>
+					<td>
+						<%= (Business.where(:type_id => 15)).count() %> </td>
+					<td>
+						<%= (Business.where(:type_id => 15)).count(:conditions => {:mobile => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 15)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 15)).count() ).to_f ) * 100, :precision => 1) %> </td>
+					<td>
+						<%= (Business.where(:type_id => 15)).count(:conditions => {:foursquare => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 15)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 15)).count() ).to_f ) * 100, :precision => 1) %></td>
+					<td>
+						<%= (Business.where(:type_id => 15)).count(:conditions => {:facebook => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 15)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 15)).count() ).to_f ) * 100, :precision => 1) %></td>
+					<td>
+						<%= (Business.where(:type_id => 15)).count(:conditions => {:yelp => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 15)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 15)).count() ).to_f ) * 100, :precision => 1) %></td>
+					<td>
+						<%= (Business.where(:type_id => 15)).count(:conditions => {:google => true}) %></td>
+					<td>
+						<%=  number_to_percentage(( ( (Business.where(:type_id => 15)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 15)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				
+				<tr>
+					<td>
+						Real Estate</td>
+						<td>
+							<%= (Business.where(:type_id => 16)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 16)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 16)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 16)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 16)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 16)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 16)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 16)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 16)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 16)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 16)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 16)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 16)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 16)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 16)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 16)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Religious</td>
+						<td>
+							<%= (Business.where(:type_id => 17)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 17)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 17)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 17)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 17)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 17)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 17)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 17)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 17)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 17)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 17)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 17)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 17)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 17)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 17)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 17)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Restaurant</td>
+						<td>
+							<%= (Business.where(:type_id => 8)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 8)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 8)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 8)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 8)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 8)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 8)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 8)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 8)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 8)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 8)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 8)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 8)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 8)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 8)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 8)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				
+				<tr>
+					<td>
+						Retail</td>
+						<td>
+							<%= (Business.where(:type_id => 18)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 18)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 18)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 18)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 18)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 18)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 18)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 18)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 18)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 18)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 18)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 18)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 18)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 18)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 18)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 18)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Salon</td>
+						<td>
+							<%= (Business.where(:type_id => 19)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 19)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 19)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 19)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 19)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 19)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 19)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 19)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 19)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 19)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 19)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 19)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 19)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 19)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 19)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 19)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Wedding Hall</td>
+						<td>
+							<%= (Business.where(:type_id => 20)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 20)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 20)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 20)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 20)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 20)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 20)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 20)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 20)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 20)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 20)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 20)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 20)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 20)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 20)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 20)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Other</td>
+						<td>
+							<%= (Business.where(:type_id => 1)).count() %> </td>
+						<td>
+							<%= (Business.where(:type_id => 1)).count(:conditions => {:mobile => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 1)).count(:conditions => {:mobile => true}) ) / ( (Business.where(:type_id => 1)).count() ).to_f ) * 100, :precision => 1) %> </td>
+						<td>
+							<%= (Business.where(:type_id => 1)).count(:conditions => {:foursquare => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 1)).count(:conditions => {:foursquare => true}) ) / ( (Business.where(:type_id => 1)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 1)).count(:conditions => {:facebook => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 1)).count(:conditions => {:facebook => true}) ) / ( (Business.where(:type_id => 1)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 1)).count(:conditions => {:yelp => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 1)).count(:conditions => {:yelp => true}) ) / ( (Business.where(:type_id => 1)).count() ).to_f ) * 100, :precision => 1) %></td>
+						<td>
+							<%= (Business.where(:type_id => 1)).count(:conditions => {:google => true}) %></td>
+						<td>
+							<%=  number_to_percentage(( ( (Business.where(:type_id => 1)).count(:conditions => {:google => true}) ) / ( (Business.where(:type_id => 1)).count() ).to_f ) * 100, :precision => 1) %></td>
+				</tr>
+				<tr>
+					<td>
+						Total</td>
+					<td>
+						<%= Business.count() %> </td>
+					<td>
+						<%= Business.count(:conditions => {:mobile => true }) %> </td>
+					<td>
+						<%= number_to_percentage(((Business.count(:conditions => {:mobile => true }))/(Business.count()).to_f)*100, :precision=> 1) %></td>
+					<td>
+						<%= Business.count(:conditions => {:foursquare => true }) %></td>
+					<td>
+						<%= number_to_percentage(((Business.count(:conditions => {:foursquare => true }))/(Business.count()).to_f)*100, :precision=> 1) %></td>
+					<td>
+						<%= Business.count(:conditions => {:facebook => true }) %></td>
+					<td>
+						<%= number_to_percentage(((Business.count(:conditions => {:facebook => true }))/(Business.count()).to_f)*100, :precision=> 1) %></td>
+					<td>
+						<%= Business.count(:conditions => {:yelp => true }) %></td>
+					<td>
+						<%= number_to_percentage(((Business.count(:conditions => {:yelp => true }))/(Business.count()).to_f)*100, :precision=> 1) %></td>
+					<td>
+						<%= Business.count(:conditions => {:google => true }) %></td>
+					<td>
+						<%= number_to_percentage(((Business.count(:conditions => {:google => true }))/(Business.count()).to_f)*100, :precision=> 1) %></td>
+				</tr>
+			</tbody>
+		</table>
+
+		
+		

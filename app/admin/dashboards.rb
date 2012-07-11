@@ -13,14 +13,21 @@ ActiveAdmin::Dashboards.build do
     #end
   #end
   
+  
  
-  section "Business Summary", do
+  section "Business Table", :priority => 1 do
     div do
-         render 'graph'
+         render 'table'
          
          #text_node %{<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/KAzFy/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>}.html_safe
        end
   end
+  
+#  section "Business Graph", :priority => 2 do
+ #   div do
+  #    render 'graph'
+   # end
+  #end
   
   
 #  section "Business Summary" do
