@@ -3,6 +3,11 @@ Mobcapdb::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   
+  resources :businesses do
+      collection do
+           get :excel
+      end
+  end
  
   
   

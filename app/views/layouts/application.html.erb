@@ -4,6 +4,8 @@
   <title>Mobile Captain Database</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "highcharts", "exporting", "jquery-1.4.2.min", "rails" %>
+  <%= javascript_include_tag "https://raw.github.com/DataTables/DataTables/master/media/js/jquery.js" %>
+  <%= javascript_include_tag "http://datatables.net/download/build/jquery.dataTables.js" %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>

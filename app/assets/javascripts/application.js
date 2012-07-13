@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require_tree .
-
