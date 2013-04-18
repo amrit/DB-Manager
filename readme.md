@@ -1,1 +1,1 @@
-This is a database manager leveraged I created with ActiveAdmin.
+This is a database manager created with Rails, leveraging ActiveAdmin.
